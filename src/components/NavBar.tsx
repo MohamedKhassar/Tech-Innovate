@@ -5,16 +5,16 @@ import React, { useEffect, useState } from 'react'
 const NavBar = () => {
     const [isDisplay, setIsDisplay] = useState(false)
     return (
-        <header className='fixed left-0 top-0 z-10 font-bold lg:p-5 p-4 lg:flex justify-center lg:gap-x-8 items-center text-white lg:text-slate-500 backdrop-blur-lg bg-black/5 lg:justify-between w-full'>
+        <header className='fixed left-0 top-0 z-10 font-bold lg:p-5 p-4 lg:flex justify-center lg:gap-x-8 lg:items-start items-center text-white lg:text-slate-500 backdrop-blur-lg bg-black/5 lg:justify-between w-full'>
             <div className='lg:hidden float-end' onClick={() => setIsDisplay(!isDisplay)}>
                 {isDisplay ? <X /> : <Menu />}
             </div>
-            <div className='flex justify-center items-center lg:gap-x-5'>
-                <BrainCircuit className='hidden lg:block' />
+            <div className='flex justify-center items-center lg:gap-x-5 gap-x-3'>
+                <BrainCircuit className='' />
                 <h1 className='text-2xl text-nowrap'>Tech Innovate</h1>
             </div>
-            <nav className={`${isDisplay ? "block" : "hidden"} "lg:block hidden"`}>
-                <ul className='lg:grid lg:grid-cols-4 lg:gap-x-8 text-md capitalize flex flex-col justify-center items-center gap-6 h-screen'>
+            <nav className={`${isDisplay ? "block" : "hidden"} lg:block`}>
+                <ul className='lg:grid lg:grid-cols-4 lg:gap-x-8 text-md capitalize flex flex-col justify-center lg:items-start items-center gap-6 lg:h-0 h-screen'>
                     <Link href="/" onClick={() => setIsDisplay(false)}>
                         <li>home</li>
                     </Link>
